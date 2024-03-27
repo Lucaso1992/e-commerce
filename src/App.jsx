@@ -7,10 +7,6 @@ import './App.css'
 function App() {
   const { store } = useAppContext();
   const products = store.products
-  // const [filters, setFilters] = useState({
-  //   category: 'all',
-  //   minPrice: 0
-  // })
 
   const filterProducts = (products) => {
     return products.filter(product => {

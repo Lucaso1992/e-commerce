@@ -10,7 +10,14 @@ const Filters = () => {
         setMinPrice(event.target.value)
         actions.setFilters(prevState => ({
             ...prevState,
-            minPrice: event.target.value
+            minPrice: event.target.value,
+        }))
+    }
+    const handleChangeCategory = (event) => {
+        const selectedCategory = event.target.value;
+        actions.setFilters(prevState => ({
+            ...prevState,
+            category: selectedCategory,
         }))
     }
     return(
@@ -26,7 +33,7 @@ const Filters = () => {
             </div>
             <div>
                 <label htmlFor="category">Category</label>
-                <select id="category">
+                <select id="category" onChange={handleChangeCategory}>
                     <option value="all">All</option>
                     <option value="Clothes">Clothes</option>
                     <option value="Electronics">Electronics</option>
