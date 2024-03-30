@@ -9,7 +9,12 @@ export const AppProvider = ({ children }) => {
       category: 'all',
       minPrice: 0
     })
+    const [cart, setCart] = useState([])
 
+    useEffect(() => {
+      console.log(cart)
+    }, [cart])
+    
    useEffect(() => {
         const fetchProducts = async () => {
             try {
@@ -23,9 +28,9 @@ export const AppProvider = ({ children }) => {
         fetchProducts();
     }, []);
 
-    const store = {products, filters}
+    const store = {products, filters, cart}
 
-    const actions = {setFilters}
+    const actions = {setFilters, setCart}
 
   return (
     <AppContext.Provider value={{ store, actions }}>

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import useAppContext from './store/AppContext'
 import Products from './components/Products/Products'
 import Header from './components/Header/Header';
+import Cart from './components/Cart/Cart';
 import './App.css'
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
   return (
     <>
       <Header/>
+      <Cart/>
       <Products products={filteredProducts} />
     </>
   )
