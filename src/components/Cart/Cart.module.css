@@ -22,6 +22,7 @@ z-index: 9999;
     right: 0px;
     top: 0px;
     width: 200px;
+    overflow-y: auto;
 }
 
 .cart ul li div{

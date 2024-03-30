@@ -11,10 +11,6 @@ export const AppProvider = ({ children }) => {
     })
     const [cart, setCart] = useState([])
 
-    useEffect(() => {
-      console.log(cart)
-    }, [cart])
-    
    useEffect(() => {
         const fetchProducts = async () => {
             try {
@@ -27,6 +23,17 @@ export const AppProvider = ({ children }) => {
 
         fetchProducts();
     }, []);
+
+    useEffect(() => {
+      const savedCart = localStorage.getItem('cart');
+      if (savedCart) {
+          setCart(JSON.parse(savedCart));
+      }
+  }, []);
+
+  useEffect(() => {
+      localStorage.setItem('cart', JSON.stringify(cart));
+  }, [cart]);
 
     const store = {products, filters, cart}
 

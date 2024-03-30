@@ -5,7 +5,6 @@ const getProducts = async () => {
             throw new Error('Network response was not ok');
         }
         const json = await response.json();
-        console.log(json)
         return json; 
     } catch (error) {
         console.error('Error fetching data:', error);

@@ -1,12 +1,17 @@
-import { useId } from "react";
+import { useId, useEffect } from "react";
 import useAppContext from "../../store/AppContext";
 import styles from "./Cart.module.css"
 import { IoCartSharp } from "react-icons/io5";
 import { IoCartOutline } from "react-icons/io5";
+import { IoMdCloseCircleOutline } from "react-icons/io";
 
 const Cart = () => {
     const cartCheckboxId = useId();
-    const { store } = useAppContext();
+    const { store, actions } = useAppContext();
+
+const handleEliminateProduct = (index) => {
+    actions.setCart(prevState => prevState.filter((_, i) => i !== index));
+}
 
     return (
         <>
@@ -25,11 +30,12 @@ const Cart = () => {
                             <footer>
                                 <small>Qty: {item.quantity}</small>
                                 <button>+</button>
+                                <button>-</button>
                             </footer>
+                            <button onClick={() => handleEliminateProduct(index)}><IoMdCloseCircleOutline /></button>
                         </li>
                     ))}
                 </ul>
-                <button><IoCartOutline/></button>
             </aside>
         </>
     );
