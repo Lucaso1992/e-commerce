@@ -4,7 +4,7 @@ import Filters from "../Filters/Filters";
 const Header = () => {
     return(
         <header>
-            <h1>React Shop</h1>
+            <h1>Lucky Shop</h1>
             <Filters/>
         </header>
     )

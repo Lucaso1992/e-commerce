@@ -9,14 +9,47 @@ const Cart = () => {
     const cartCheckboxId = useId();
     const { store, actions } = useAppContext();
 
-const handleEliminateProduct = (index) => {
-    actions.setCart(prevState => prevState.filter((_, i) => i !== index));
-}
+    useEffect(() => {
+        console.log(store.cart)
+    }, [store.cart])
+
+
+    const handleEliminateProduct = (index) => {
+        actions.setCart(prevState => prevState.filter((_, i) => i !== index));
+    }
+
+    const handleIncrementQuantity = (index) => {
+        actions.setCart((prevState) =>
+            prevState.map((item, i) =>
+                i === index ? { ...item, quantity: item.quantity + 1 } : item
+            )
+        );
+    };
+
+    const handleDecrementQuantity = (index) => {
+        actions.setCart((prevState) =>
+            prevState.map((item, i) =>
+                i === index && item.quantity > 1
+                    ? { ...item, quantity: item.quantity - 1 }
+                    : item
+            )
+        );
+    };
+
+    const calculateTotalPrice = () => {
+        let totalPrice = 0;
+        store.cart.forEach(product => {
+          totalPrice += product.price * product.quantity;
+        });
+        return totalPrice;
+      };
+
+      const totalCartPrice = calculateTotalPrice();
 
     return (
         <>
             <label className={styles.cart_button} htmlFor={cartCheckboxId}>
-                <IoCartSharp/>
+                <IoCartSharp />
             </label>
             <input id={cartCheckboxId} type="checkbox" hidden />
             <aside className={styles.cart}>
@@ -28,13 +61,14 @@ const handleEliminateProduct = (index) => {
                                 <strong>{item.title}</strong> - $ {item.price}
                             </div>
                             <footer>
-                                <small>Qty: {item.quantity}</small>
-                                <button>+</button>
-                                <button>-</button>
+                                <small className={styles.quantity}>Qty: {item.quantity}</small>
+                                <button onClick={() => handleIncrementQuantity(index)}>+</button>
+                                <button onClick={() => handleDecrementQuantity(index)}>-</button>
                             </footer>
                             <button onClick={() => handleEliminateProduct(index)}><IoMdCloseCircleOutline /></button>
                         </li>
                     ))}
+                    <li className={styles.total}>Total: {totalCartPrice.toFixed(2)}</li>
                 </ul>
             </aside>
         </>

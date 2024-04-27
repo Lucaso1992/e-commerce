@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-import useAppContext from "../../store/AppContext";
 import Card from "../Card/Card";
 import styles from "./Products.module.css";
 

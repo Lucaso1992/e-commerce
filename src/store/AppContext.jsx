@@ -15,13 +15,14 @@ export const AppProvider = ({ children }) => {
         const fetchProducts = async () => {
             try {
                 const productsData = await getProducts();
-                setProducts(productsData);
+                setProducts(productsData.slice(0, 40));
             } catch (error) {
                 console.error('Error fetching products:', error);
             }
         };
 
         fetchProducts();
+        console.log(products)
     }, []);
 
     useEffect(() => {
