@@ -6,14 +6,12 @@
     flex-direction: column;
     align-items: center;
     padding: 1rem;
-    /* box-shadow: 0 1px 2px 0 white; */
     transition: transform 0.3s ease;
     font-family: 'DINNEXTLPro-Light';
 }
 .card_container:hover{
     transform: scale(1.03);
     cursor: pointer;
-    /* box-shadow: 0 2px 6px 0 rgba(245, 245, 245, 0.881); */
 }
 
 .img_container{
@@ -32,4 +30,28 @@
     color: black;
     text-align: center;
     font-family: 'DINNEXTLPro-Medium';
+}
+.add_button{
+    border-radius: 6px;
+    border: solid 1px ;
+    border-color: rgba(174, 168, 168, 0.936);
+    display: flex;
+    justify-content: center;
+    background-color: rgba(231, 230, 230, 0.811);
+    transition: transform 0.2s ease;
+}
+
+.add_icon{
+    padding: .3rem;
+    font-size: 1.2rem;
+}
+
+.add_button:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+    background-color: rgba(64, 165, 64, 0.733);
+}
+
+.selected{
+    background-color: rgba(64, 165, 64, 0.733);
 }

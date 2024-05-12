@@ -22,7 +22,6 @@ export const AppProvider = ({ children }) => {
         };
 
         fetchProducts();
-        console.log(products)
     }, []);
 
     useEffect(() => {
@@ -35,6 +34,10 @@ export const AppProvider = ({ children }) => {
   useEffect(() => {
       localStorage.setItem('cart', JSON.stringify(cart));
   }, [cart]);
+
+  const isProductInCart = (productId) => {
+    return cart.some(item => item.id === productId);
+}
 
     const store = {products, filters, cart}
 

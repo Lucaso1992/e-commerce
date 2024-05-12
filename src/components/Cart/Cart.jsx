@@ -9,11 +9,6 @@ const Cart = () => {
     const cartCheckboxId = useId();
     const { store, actions } = useAppContext();
 
-    useEffect(() => {
-        console.log(store.cart)
-    }, [store.cart])
-
-
     const handleEliminateProduct = (index) => {
         actions.setCart(prevState => prevState.filter((_, i) => i !== index));
     }
