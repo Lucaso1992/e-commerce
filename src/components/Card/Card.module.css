@@ -49,7 +49,6 @@
 .add_button:hover {
     transform: scale(1.05);
     cursor: pointer;
-    background-color: rgba(64, 165, 64, 0.733);
 }
 
 .selected{
