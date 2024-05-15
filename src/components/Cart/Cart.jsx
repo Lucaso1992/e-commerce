@@ -34,12 +34,12 @@ const Cart = () => {
     const calculateTotalPrice = () => {
         let totalPrice = 0;
         store.cart.forEach(product => {
-          totalPrice += product.price * product.quantity;
+            totalPrice += product.price * product.quantity;
         });
         return totalPrice;
-      };
+    };
 
-      const totalCartPrice = calculateTotalPrice();
+    const totalCartPrice = calculateTotalPrice();
 
     return (
         <>
@@ -52,15 +52,15 @@ const Cart = () => {
                     {store.cart.map((item, index) => (
                         <li key={index}>
                             <img src={item.images} alt={item.title} />
-                            <div>
+                            <div className={styles.title}>
                                 <strong>{item.title}</strong> - $ {item.price}
                             </div>
-                            <footer>
+                            <div className={styles.buttons_container}>
                                 <small className={styles.quantity}>Qty: {item.quantity}</small>
-                                <button onClick={() => handleIncrementQuantity(index)}>+</button>
-                                <button onClick={() => handleDecrementQuantity(index)}>-</button>
-                            </footer>
-                            <button onClick={() => handleEliminateProduct(index)}><IoMdCloseCircleOutline /></button>
+                                <button className={styles.bttn} onClick={() => handleIncrementQuantity(index)}>+</button>
+                                <button className={styles.bttn} onClick={() => handleDecrementQuantity(index)}>-</button>
+                                <button className={styles.erease_bttn} onClick={() => handleEliminateProduct(index)}><IoMdCloseCircleOutline /></button>
+                            </div>
                         </li>
                     ))}
                     <li className={styles.total}>Total: {totalCartPrice.toFixed(2)}</li>

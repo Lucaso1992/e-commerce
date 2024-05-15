@@ -7,7 +7,7 @@ display: flex;
 height: 32px;
 justify-content: center;
 padding: 4px;
-position: absolute;
+position: fixed;
 right: 8px;
 top: 8px;
 transition: all .3s ease;
@@ -17,14 +17,13 @@ z-index: 9999;
 .cart{
     background: #000;
     display: none;
-    padding: 32px;
+    padding: 15px;
     position: fixed;
     right: 0px;
     top: 0px;
-    width: 200px;
+    width: 270px;
     overflow-y: auto;
 }
-
 .cart ul li div{
     color: whitesmoke;
 }
@@ -64,4 +63,30 @@ z-index: 9999;
 }
 ul{
     list-style-type: none;
+    padding: 0;
+}
+.buttons_container{
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    margin-top: 1rem;
+}
+.bttn, .erease_bttn{
+    display: flex;
+    align-items: center;
+    padding: 3px 8px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.bttn:hover, .erease_bttn:hover{
+    background-color: rgb(186, 186, 186);
+    border: 2px solid rgb(186, 186, 186);
+    border-radius: 2px;
+}
+
+.erease_bttn{
+    margin-left: auto;
+}
+.title{
+    margin-top: 1rem;
 }
