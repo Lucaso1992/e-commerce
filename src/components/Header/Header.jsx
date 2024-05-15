@@ -5,16 +5,9 @@ import audio from "../../assets/laser.mp3"
 
 const Header = () => {
 
-//     const [saludo, setSaludo] = useState(false);
-
-// useEffect(() => {
-//     console.log(saludo)}
-//     ,[saludo])
-
     return(
         <header>
-            <h1>Lucky Shop</h1>
-            {/* <button onClick={() => setSaludo(!saludo)}>BOTON</button> */}
+            <h1>LUCKY SHOP</h1>
             <Filters/>
         </header>
     )
