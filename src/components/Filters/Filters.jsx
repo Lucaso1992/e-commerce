@@ -36,7 +36,7 @@ const Filters = () => {
                 <span>$ {minPrice}</span>
             </div>
             <div>
-                <label htmlFor={categoryFilteredId}>Category</label>
+                <label className={styles.category} htmlFor={categoryFilteredId}>Category</label>
                 <select id={categoryFilteredId} onChange={handleChangeCategory}>
                     <option value="all">All</option>
                     <option value="Clothes">Clothes</option>

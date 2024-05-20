@@ -24,6 +24,10 @@ export const AppProvider = ({ children }) => {
         fetchProducts();
     }, []);
 
+    // useEffect(() => {
+    //   console.log(products)
+    // }, [products])
+
     useEffect(() => {
       const savedCart = localStorage.getItem('cart');
       if (savedCart) {
@@ -34,10 +38,6 @@ export const AppProvider = ({ children }) => {
   useEffect(() => {
       localStorage.setItem('cart', JSON.stringify(cart));
   }, [cart]);
-
-  const isProductInCart = (productId) => {
-    return cart.some(item => item.id === productId);
-}
 
     const store = {products, filters, cart}
 
