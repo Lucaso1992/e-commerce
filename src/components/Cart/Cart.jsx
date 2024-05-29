@@ -63,7 +63,7 @@ const Cart = () => {
                             </div>
                         </li>
                     ))}
-                    <li className={styles.total}>Total: {totalCartPrice.toFixed(2)}</li>
+                    <li className={styles.total}>Total: $ {totalCartPrice.toFixed(2)}</li>
                 </ul>
             </aside>
         </>

@@ -24,9 +24,6 @@ export const AppProvider = ({ children }) => {
         fetchProducts();
     }, []);
 
-    // useEffect(() => {
-    //   console.log(products)
-    // }, [products])
 
     useEffect(() => {
       const savedCart = localStorage.getItem('cart');

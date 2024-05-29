@@ -77,6 +77,7 @@ ul{
     padding: 3px 8px;
     font-size: 1rem;
     cursor: pointer;
+    
 }
 
 .erease_bttn{
@@ -86,11 +87,19 @@ ul{
     margin-top: 1rem;
 }
 
+@media (min-width: 220px) and (max-width: 1024px) {
+    .bttn, .erease_bttn{
+        border-radius: 2px;
+    }
+}
+
+
 @media (min-width: 1024px) {
     .bttn:hover, .erease_bttn:hover{
         background-color: rgb(186, 186, 186);
         border: 2px solid rgb(186, 186, 186);
         border-radius: 2px;
     }
+
   }
   
