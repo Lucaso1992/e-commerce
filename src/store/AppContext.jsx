@@ -15,7 +15,7 @@ export const AppProvider = ({ children }) => {
         const fetchProducts = async () => {
             try {
                 const productsData = await getProducts();
-                setProducts(productsData.slice(0, 40));
+                setProducts(productsData);
             } catch (error) {
                 console.error('Error fetching products:', error);
             }
@@ -23,7 +23,6 @@ export const AppProvider = ({ children }) => {
 
         fetchProducts();
     }, []);
-
 
     useEffect(() => {
       const savedCart = localStorage.getItem('cart');

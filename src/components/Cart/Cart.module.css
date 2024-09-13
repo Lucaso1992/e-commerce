@@ -14,6 +14,7 @@ transition: all .3s ease;
 width: 32px;
 z-index: 9999;
 }
+
 .cart{
     background: #000;
     display: none;
@@ -24,6 +25,7 @@ z-index: 9999;
     width: 270px;
     overflow-y: auto;
 }
+
 .cart ul li div{
     color: whitesmoke;
 }
@@ -56,10 +58,12 @@ z-index: 9999;
 }
 .quantity{
     color: whitesmoke;
+    font-family: 'DINNEXTLPro-Medium';
 }
 .total{
     color: whitesmoke;
     padding-top: 16px;
+    font-family: 'DINNEXTLPro-Medium';
 }
 ul{
     list-style-type: none;
@@ -85,6 +89,7 @@ ul{
 }
 .title{
     margin-top: 1rem;
+    font-family: 'DINNEXTLPro-Medium';
 }
 
 @media (min-width: 220px) and (max-width: 1024px) {

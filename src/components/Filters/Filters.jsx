@@ -18,6 +18,7 @@ const Filters = () => {
 
     const handleChangeCategory = (event) => {
         const selectedCategory = event.target.value;
+        console.log(selectedCategory)
         actions.setFilters(prevState => ({
             ...prevState,
             category: selectedCategory,
@@ -32,18 +33,17 @@ const Filters = () => {
                 id={minPriceFilteredId}
                 min='0'
                 max='100' 
-                onChange={handleChangeMinPrice}/>
+                onChange={handleChangeMinPrice}/>       
                 <span>$ {minPrice}</span>
             </div>
             <div>
                 <label className={styles.category} htmlFor={categoryFilteredId}>Category</label>
                 <select id={categoryFilteredId} onChange={handleChangeCategory}>
                     <option value="all">All</option>
-                    <option value="Clothes">Clothes</option>
-                    <option value="Electronics">Electronics</option>
-                    <option value="Furniture">Furniture</option>
-                    <option value="Shoes">Shoes</option>
-                    <option value="Miscellaneous">Miscellaneous</option>
+                    <option value="men's clothing">Men's clothing</option>
+                    <option value="jewelery">Jewelery</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="women's clothing">Women's clothing</option>
                 </select>
             </div>
         </section>

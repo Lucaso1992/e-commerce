@@ -1,7 +1,7 @@
 .card_container{
     max-width: 200px;
     height: 280px;
-    background-image: linear-gradient(to right, whitesmoke,  #fffacde7);
+   background-color: whitesmoke;
     border-radius: 4px;
     display: flex;
     flex-direction: column;
@@ -9,6 +9,8 @@
     padding: 1rem;
     transition: transform 0.3s ease;
     font-family: 'DINNEXTLPro-Light';
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+
 }
 .card_container:hover{
     transform: scale(1.03);
@@ -41,6 +43,7 @@
     justify-content: center;
     background-color: rgba(231, 230, 230, 0.811);
     transition: transform 0.2s ease;
+    margin-top: .8rem;
 }
 
 .add_icon{

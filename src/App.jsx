@@ -14,7 +14,7 @@ function App() {
       return (
         product.price >= store.filters.minPrice &&
         (store.filters.category === 'all' ||
-          product.category.name === store.filters.category)
+          product.category === store.filters.category)
       )
     })
   }

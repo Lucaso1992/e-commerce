@@ -5,10 +5,10 @@
 }
 body{
   margin: 0;
-  background-color: #f2f2f2; 
-  background-image: linear-gradient(to right, #e3e2e2, #bdb9b9); /* Gris claro */
+  background-color: white; 
+  background-image: linear-gradient(to right, #e2e8ef9a, #a0c4ff8a); /* Azul claro */
   box-shadow: inset 0 10px 20px rgba(9, 9, 9, 0.333); /* Sombra en la parte inferior */
-  font-family: 'DINNEXTLPro-Medium';
+  font-family: "Paytone One", sans-serif;
 }
 
 @font-face {
@@ -19,4 +19,8 @@ body{
 @font-face {
   font-family: 'DINNEXTLPro-Light';
   src: url('../src/assets/fonts/DINNextLTPro-Light.otf') format('opentype');
+}
+
+.shine{
+  box-shadow: 2px yellow;
 }
